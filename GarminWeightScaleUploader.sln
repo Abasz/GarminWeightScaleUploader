@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9CC2650-FDD4-428C-AE93-69C56975F5FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarminWeightScaleUploader.Lib", "src\GarminWeightScaleUploader.Lib\GarminWeightScaleUploader.Lib.csproj", "{CC20AFA7-20FD-4688-A681-44C709701FF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A64DBD68-E9E4-453D-B918-C57984CAB81A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GarminWeightScaleUploader.Lib.Tests", "tests\GarminWeightScaleUploader.Lib.Tests\GarminWeightScaleUploader.Lib.Tests.csproj", "{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC20AFA7-20FD-4688-A681-44C709701FF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC20AFA7-20FD-4688-A681-44C709701FF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC20AFA7-20FD-4688-A681-44C709701FF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC20AFA7-20FD-4688-A681-44C709701FF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC20AFA7-20FD-4688-A681-44C709701FF2} = {F9CC2650-FDD4-428C-AE93-69C56975F5FE}
+		{AFCD42CF-7A3E-4AD0-ACC1-5A8EC73C9BB1} = {A64DBD68-E9E4-453D-B918-C57984CAB81A}
+	EndGlobalSection
+EndGlobal

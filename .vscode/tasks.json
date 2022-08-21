@@ -1,0 +1,64 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/GarminWeightScaleUploader.Lib/GarminWeightScaleUploader.Lib.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/src/GarminWeightScaleUploader.Lib/GarminWeightScaleUploader.Lib.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "coverage report",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "${workspaceFolder}/tests/GarminWeightScaleUploader.Lib.Tests/GarminWeightScaleUploader.Lib.Tests.csproj",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=./../../src/GarminWeightScaleUploader.Lib/lcov"
+            ],
+            "group": "test",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/src/GarminWeightScaleUploader.Lib/GarminWeightScaleUploader.Lib.csproj",
+                "/property:GenerateFullPaths=true",
+                "/property:Configuration=Release",
+                "/property:PublishSingleFile=true",
+                "/property:SelfContained=true",
+                "/property:RuntimeIdentifier=win-x64",
+                "/property:IncludeNativeLibrariesForSelfExtract=true",
+                "/property:PublishDir=${workspaceFolder}/dist/",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

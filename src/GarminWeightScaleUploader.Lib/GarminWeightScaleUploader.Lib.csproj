@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <InvariantGlobalization>true</InvariantGlobalization>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+        <Version>0.0.1</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\garmin-connect-client\GarminConnectClient.Lib\GarminConnectClient.Lib.csproj" />
+        <Reference Include="Fit, Culture=neutral, processorArchitecture=MSIL">
+            <SpecificVersion>False</SpecificVersion>
+            <HintPath>..\..\Libs\Fit.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="GarminConnectClient.Lib.Services"/>
+        <Using Include="GarminConnectClient.Lib"/>
+        <Using Include="Dynastream.Fit"/>
+    </ItemGroup>
+</Project>
