@@ -50,7 +50,24 @@
                 "${workspaceFolder}/src/GarminWeightScaleUploader.Lib/GarminWeightScaleUploader.Lib.csproj",
                 "/property:GenerateFullPaths=true",
                 "/property:Configuration=Release",
-                "/property:PublishSingleFile=true",
+                "/property:SelfContained=true",
+                "/property:RuntimeIdentifier=win-x64",
+                "/property:IncludeNativeLibrariesForSelfExtract=true",
+                "/property:PublishDir=${workspaceFolder}/dist/",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Create NuGet Package",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "pack",
+                "${workspaceFolder}/src/GarminWeightScaleUploader.Lib/GarminWeightScaleUploader.Lib.csproj",
+                "/property:GenerateFullPaths=true",
+                "/property:Configuration=Release",
                 "/property:SelfContained=true",
                 "/property:RuntimeIdentifier=win-x64",
                 "/property:IncludeNativeLibrariesForSelfExtract=true",

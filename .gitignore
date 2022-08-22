@@ -54,3 +54,4 @@ assets/*
 !assets/temp
 *.ppk
 test.runsettings
+*.nupkg

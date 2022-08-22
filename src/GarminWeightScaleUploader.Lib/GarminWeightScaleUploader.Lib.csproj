@@ -1,23 +1,44 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageOutputPath>..\..\nupack</PackageOutputPath>
+        <PackageId>GarminWeightScaleUploader.Library</PackageId>
+        <Authors>Abász</Authors>
+        <Company>Abász</Company>
+        <PackageTags>Garmin; Weight Scale; Uploader</PackageTags>
+        <Description>&#xD;
+            The purpose of this class library to provide a simple API for interfacing garmin connect to upload weight scale data.&#xD;
+        </Description>
+        <RepositoryURL>https://github.com/Abasz/GarminWeightScaleUploader</RepositoryURL>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <DocumentationFile>bin\$(TargetFramework)\$(MSBuildProjectName).xml</DocumentationFile>
         <InvariantGlobalization>true</InvariantGlobalization>
         <ImplicitUsings>enable</ImplicitUsings>
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <NoWarn>$(NoWarn);1591</NoWarn>
-        <Version>0.0.1</Version>
+        <Version>0.1.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\garmin-connect-client\GarminConnectClient.Lib\GarminConnectClient.Lib.csproj" />
-        <Reference Include="Fit, Culture=neutral, processorArchitecture=MSIL">
+        <ProjectReference Include="..\..\..\garmin-connect-client\GarminConnectClient.Lib\GarminConnectClient.Lib.csproj" PrivateAssets="All"/>
+        <Reference Include="Fit, Culture=neutral, processorArchitecture=MSIL" PrivateAssets="All">
             <SpecificVersion>False</SpecificVersion>
             <HintPath>..\..\Libs\Fit.dll</HintPath>
         </Reference>
+        <Content Include="..\..\Libs\Fit.dll">
+            <Pack>True</Pack>
+            <PackagePath>\lib\netstandard2.0</PackagePath>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0"/>
+        <PackageReference Include="Teronis.MSBuild.Packaging.ProjectBuildInPackage" Version="1.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
     </ItemGroup>
 
     <ItemGroup>
