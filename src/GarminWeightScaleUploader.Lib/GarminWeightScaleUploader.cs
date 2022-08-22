@@ -78,7 +78,7 @@ public class GarminWeightScaleUploader
 
 
         if (garminWeightScaleData.Weight > 0 && userProfileSettings.Height > 0 || garminWeightScaleData.BodyMassIndex is not null)
-            weightMesg.SetBmi(MathF.Round(garminWeightScaleData.BodyMassIndex ?? (float)(garminWeightScaleData.Weight / MathF.Pow((float)userProfileSettings.Height! / 100, 2)), 1));
+            weightMesg.SetBmi((float)Math.Round(garminWeightScaleData.BodyMassIndex ?? (garminWeightScaleData.Weight / Math.Pow((float)userProfileSettings.Height! / 100, 2)), 1));
 
         encoder.Write(weightMesg);
 
