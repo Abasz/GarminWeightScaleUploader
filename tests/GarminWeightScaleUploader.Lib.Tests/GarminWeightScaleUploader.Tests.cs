@@ -1,5 +1,5 @@
-using GarminWeightScaleUploader.Lib.Models;
 using FitFileConverter.ClassLibrary;
+using GarminWeightScaleUploader.Lib.Models;
 
 namespace GarminWeightScaleUploader.Lib.Tests;
 
@@ -111,8 +111,31 @@ public class GarminWeightScaleUploaderTests : IDisposable
             Assert.Single(fitData.WeightScaleMesgs);
             Assert.Collection(fitData.WeightScaleMesgs, mesg =>
             {
-                Assert.Equal(data.Weight, mesg.GetWeight());
                 Assert.Equal(MathF.Round((float)data.BodyMassIndex!, 1), mesg.GetBmi());
+            });
+
+        }
+    }
+
+    [Fact(DisplayName = "Create file without BMI")]
+    public async Task BMINullShouldNotBeAdded()
+    {
+        var data = _garminWeightScaleDTO with { Email = "test", Password = "test" };
+        var userData = _userProfileSettings with { Height = null! };
+
+        try
+        {
+            await GarminWeightScaleUploader.UploadAsync(data, userData);
+        }
+        catch
+        {
+            var fitFile = Directory.GetFiles(_tmpDir).First(item => item.Contains(".fit"));
+            var fitData = FitFileParser.FromFit(fitFile);
+
+            Assert.Single(fitData.WeightScaleMesgs);
+            Assert.Collection(fitData.WeightScaleMesgs, mesg =>
+            {
+                Assert.Null(mesg.GetBmi());
             });
 
         }

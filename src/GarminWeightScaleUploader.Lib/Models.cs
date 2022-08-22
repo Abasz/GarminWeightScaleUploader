@@ -1,16 +1,19 @@
-
 namespace GarminWeightScaleUploader.Lib.Models;
 
 public record UserProfileSettings
 {
-    public Gender Gender { init; get; } = Gender.Male;
-    public int? Age { init; get; }
+    /// <summary>
+    /// Gender enum as per the FIT SDK
+    /// </summary>
+    /// <value>Male</value>
     /// <summary>
     /// Height in centimeter
     /// </summary>
     /// <value></value>
-    public int? Height { init; get; }
-    public ActivityClass ActivityClass { init; get; } = (ActivityClass)90;
+    /// <summary>
+    /// Activity class enum that is in reality a byte type with possible values between either 1 and 100 or equal to 128 for professional athletes
+    /// </summary>
+    /// <returns></returns>
 }
 
 public record GarminWeightScaleData
