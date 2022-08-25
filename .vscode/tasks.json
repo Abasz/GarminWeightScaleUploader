@@ -36,7 +36,7 @@
                 "${workspaceFolder}/tests/GarminWeightScaleUploader.Lib.Tests/GarminWeightScaleUploader.Lib.Tests.csproj",
                 "/p:CollectCoverage=true",
                 "/p:CoverletOutputFormat=lcov",
-                "/p:CoverletOutput=./../../src/GarminWeightScaleUploader.Lib/lcov"
+                "/p:CoverletOutput=${workspaceFolder}/src/GarminWeightScaleUploader.Lib/lcov"
             ],
             "group": "test",
             "problemMatcher": "$msCompile"

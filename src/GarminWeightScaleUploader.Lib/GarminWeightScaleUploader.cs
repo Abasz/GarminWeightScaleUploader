@@ -27,7 +27,7 @@ public class GarminWeightScaleUploader
     private static string CreateWeightScaleFitFile(GarminWeightScaleData garminWeightScaleData, UserProfileSettings userProfileSettings)
     {
         var timeCreated = new Dynastream.Fit.DateTime(System.DateTime.UtcNow);
-        var outputFilePath = Path.Combine(_tmpDir, $"{timeCreated.GetTimeStamp()}.fit");
+        var outputFilePath = Path.Combine(_tmpDir, $"{timeCreated.GetTimeStamp()}_WEIGHT_SCALE.fit");
 
         var stream = new FileStream(outputFilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
         var encoder = new Encode(ProtocolVersion.V20);

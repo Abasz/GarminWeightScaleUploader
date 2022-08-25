@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <PackageOutputPath>..\..\nupack</PackageOutputPath>
         <PackageId>GarminWeightScaleUploader.Library</PackageId>
         <Authors>Abász</Authors>
@@ -19,18 +19,18 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <NoWarn>$(NoWarn);1591</NoWarn>
-        <Version>0.1.1</Version>
+        <Version>0.2.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\garmin-connect-client\GarminConnectClient.Lib\GarminConnectClient.Lib.csproj" PrivateAssets="All"/>
-        <Reference Include="Fit, Culture=neutral, processorArchitecture=MSIL" PrivateAssets="All">
+        <Reference Include="Fit, Culture=neutral" PrivateAssets="All">
             <SpecificVersion>False</SpecificVersion>
             <HintPath>..\..\Libs\Fit.dll</HintPath>
         </Reference>
         <Content Include="..\..\Libs\Fit.dll">
             <Pack>True</Pack>
-            <PackagePath>\lib\netstandard2.0</PackagePath>
+            <PackagePath>\lib\net6.0</PackagePath>
         </Content>
     </ItemGroup>
     <ItemGroup>
