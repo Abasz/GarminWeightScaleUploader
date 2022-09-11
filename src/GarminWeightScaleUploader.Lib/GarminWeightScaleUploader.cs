@@ -16,8 +16,6 @@ public class GarminWeightScaleUploader
         .AddInMemoryCollection(
         new Dictionary<string, string>
         {
-            ["AppConfig:Username"] = userName,
-            ["AppConfig:Password"] = password,
             ["AppConfig:BackupDir"] = _tmpDir,
         });
         IConfigurationRoot configuration = builder.Build();
@@ -105,7 +103,7 @@ public class GarminWeightScaleUploader
         var configuration = SetupConfiguration(weightScaleDTO.Email, weightScaleDTO.Password);
         var logger = LoggerFactory.Create(logging => logging.AddConsole()).CreateLogger<Client>();
         var client = new Client(configuration, logger);
-        await client.Authenticate();
+        await client.Authenticate(weightScaleDTO.Email, weightScaleDTO.Password);
         if (!(await client.UploadActivity(fitFilePath, new FileFormat { FormatKey = "fit" })).Success)
         {
             throw new Exception("Error while uploading uploading Garmin Connect");

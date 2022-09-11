@@ -21,7 +21,7 @@
             <SpecificVersion>False</SpecificVersion>
             <HintPath>..\..\Libs\Fit.dll</HintPath>
         </Reference>
-        <Reference Include="FitFileConverter.ClassLibrary, Culture=neutral, processorArchitecture=MSIL">
+        <Reference Include="FitFileConverter.ClassLibrary, Culture=neutral">
             <HintPath>..\..\Libs\FitFileConverter.ClassLibrary.dll</HintPath>
         </Reference>
         <ProjectReference Include="..\..\src\GarminWeightScaleUploader.Lib\GarminWeightScaleUploader.Lib.csproj"/>
